@@ -14,6 +14,6 @@ void main() {
     await tester.pumpWidget(const MyApp());
 
     // Verify that our text is displayed
-    expect(find.text('wennas!!!'), findsOneWidget);
+    expect(find.text('wennas!!!!'), findsOneWidget);
   });
 }
