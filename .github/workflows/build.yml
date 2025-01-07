@@ -46,8 +46,7 @@ jobs:
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
-        
-        
+          
       - name: Build APK
         run: flutter build apk
         
