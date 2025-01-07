@@ -14,3 +14,33 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+# Integración Continua (CI/CD)
+
+## Configuración Local
+
+### Pre-commit
+El proyecto usa git hooks para validaciones locales:
+- Análisis estático de código
+- Ejecución de pruebas unitarias
+
+## commit-msg
+-Revisa que la estructura del mensaje de commit estandar
+
+### Pre-push
+- Validación de cobertura de código
+
+El APK se generará en: `build/app/outputs/flutter-apk/app-release.apk`
+
+## GitHub Actions
+
+El workflow de CI/CD (.github/workflows/build.yml) ejecuta:
+1. Validación de código
+2. Pruebas unitarias con cobertura
+3. Generación de APK
+4. Almacenamiento del APK como artefacto
+
+### Visualizar builds
+1. Ve a la pestaña "Actions" en GitHub
+2. Selecciona el último workflow
+3. Descarga el APK desde "Artifacts"

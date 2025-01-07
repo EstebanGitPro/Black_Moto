@@ -1,0 +1,58 @@
+name: Flutter CI
+
+on:
+  # Se ejecuta esta acción cuando se hace un push a la rama master
+  push:
+    branches: [ "main" ]
+  # Se ejecuta cuando se crea un PR contra la rama master
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  flutter_job:
+    # La máquina donde se ejecutará el trabajo
+    runs-on: ubuntu-latest 
+
+    steps:
+      - name: Clonar el repositorio
+        uses: actions/checkout@v4
+        
+        
+      # Configura Flutter
+      - name: Configurar Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.27.1'
+          channel: 'stable'
+          architecture: x64
+      
+      - name: Get dependencies
+        run: flutter pub get
+        
+      - name: Analyze code
+        run: flutter analyze
+
+      - name: Run tests with coverage
+        run: flutter test --coverage
+
+      - name: Upload test results to Codecov
+        if: ${{ !cancelled() }}
+        uses: codecov/test-results-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+           
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v5
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
+        
+        
+      - name: Build APK
+        run: flutter build apk
+        
+      - name: Upload APK
+        uses: actions/upload-artifact@v2
+        with:
+          name: release-apk
+          path: build/app/outputs/flutter-apk/app-release.apk
