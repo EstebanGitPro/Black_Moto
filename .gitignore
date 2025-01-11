@@ -45,5 +45,10 @@ node_modules/
 package-lock.json
 package.json
 
-#coverage
-*/coverage
+# LCOV coverage reports
+coverage/
+coverage/html/
+coverage/**/*.html
+coverage/**/*.css
+coverage/**/*.js
+coverage/lcov.info
