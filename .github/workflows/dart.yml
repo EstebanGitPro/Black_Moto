@@ -30,13 +30,11 @@ jobs:
         uses: codecov/codecov-action@v3
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-
+          
+          
   build_web:
     needs: test
     runs-on: ubuntu-latest
-    env:
-      my_secret: ${{secrets.commit_secret}}
-
     steps:
       - uses: actions/checkout@v4
 
@@ -54,14 +52,16 @@ jobs:
         run: flutter build web --release
 
       - name: Deploy to GitHub Pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           cd build/web
           git init
-          git config --global user.email "estebanpoly.e.a@gmail.com"
-          git config --global user.name "EstebanGitPro"
+          git config --global user.email "github-actions@github.com"
+          git config --global user.name "github-actions"
           git status
-          git remote add origin https://${{secrets.commit_secret}}@github.com/EstebanGitPro/hello_world_app.git
           git checkout -b gh-pages
-          git add --all
+          git add .
           git commit -m "Actualización del sitio web"
-          git push origin gh-pages -f
+          git remote add origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git push -f origin gh-pages
