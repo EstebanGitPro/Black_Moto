@@ -14,7 +14,7 @@ void main() {
     await tester.pumpWidget(const MyApp());
 
     // Verify that our text is displayed
-    expect(find.text('wennas Actions! and husk clone whit commit-msg'),
+    expect(find.text('wennas Actions! and husk clone whit commit-msg clone'),
         findsOneWidget);
   });
 }

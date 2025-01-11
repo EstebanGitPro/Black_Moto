@@ -6,7 +6,7 @@ message=$(cat "$1")
 echo "DEBUG: Mensaje del commit: $message"
 
 # Patrón regex para el mensaje del commit
-commit_pattern="^(fix|feat|doc|chore|refactor|test|style|perf|build|ci|revert):.*"
+commit_pattern="^(fix|feat|docs|chore|refactor|test|style|perf|build|ci|revert):.*"
 
 if ! echo "$message" | grep -Eiq "$commit_pattern"; then
     echo "❌ Error: El mensaje del commit no sigue el formato requerido"
