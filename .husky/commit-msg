@@ -1,0 +1,21 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+# Leer el mensaje del archivo que Git nos pasa
+message=$(cat "$1")
+
+echo "DEBUG: Mensaje del commit: $message"
+
+# Patrón regex para el mensaje del commit
+commit_pattern="^(fix|feat|doc|chore|refactor|test|style|perf|build|ci|revert):.*"
+
+if ! echo "$message" | grep -Eiq "$commit_pattern"; then
+    echo "❌ Error: El mensaje del commit no sigue el formato requerido"
+    echo "Formato esperado: <tipo>: <descripción>"
+    echo "Tipos permitidos: feat, fix, docs, style, refactor, test, chore, build, ci, perf, revert"
+    echo "Ejemplo: feat: implementar login con Google"
+    exit 1
+fi
+
+echo "✅ Formato del mensaje de commit válido"
+exit 0
+
