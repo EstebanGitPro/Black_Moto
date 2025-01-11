@@ -10,7 +10,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: Text('wennas Actions! and husk clone whit commit-msg clone'),
+      home:
+          Text('wennas Actions! and husk clone whit commit-msg clone of clone'),
     );
   }
 }
