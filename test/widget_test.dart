@@ -14,6 +14,7 @@ void main() {
     await tester.pumpWidget(const MyApp());
 
     // Verify that our text is displayed
-    expect(find.text('wennas!! Actions! and gradel ok'), findsOneWidget);
+    expect(
+        find.text('wennas!! Actions! and gradel ok and husk'), findsOneWidget);
   });
 }

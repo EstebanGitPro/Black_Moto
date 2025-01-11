@@ -44,3 +44,13 @@ El workflow de CI/CD (.github/workflows/build.yml) ejecuta:
 1. Ve a la pestaña "Actions" en GitHub
 2. Selecciona el último workflow
 3. Descarga el APK desde "Artifacts"
+
+## Android SDK Build-Tools: 33.0.1
+"Installing Android SDK Build-Tools 33.0.1"
+
+## Tamaño del APK generado: 18.3MB
+
+## Ubicación: build/app/outputs/flutter-apk/app-release.apk
+
+## Flutter embedding: v2
+Este fue el cambio crítico que permitió que la compilación funcionara, después de actualizar desde v1
