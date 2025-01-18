@@ -1,5 +1,5 @@
 # BlackMoto
-![Ícono](./assets/icon_1.png)
+ ![icon](./assets/icon_1.png){: width=100px height=100px}
 
 ## Índice
 1. [Descripción General](#descripción-general)
@@ -11,7 +11,7 @@
 7. [Especificaciones Técnicas](#especificaciones-técnicas)
 
 ## Descripción General
-BlackMoto es una aplicación desarrollada en Flutter que implementa Clean Architecture y utiliza MySQL como base de datos. El despliegue se realiza mediante GitHub Actions.
+BlackMoto es una aplicación desarrollada en Flutter que implementa Clean Architecture y ue permite a los usuarios ahorrar tanto su tiempo como su dinero en la búsqueda de los servicios especificos para su motocicleta.
 
 ## Funcionalidades
 
