@@ -1,5 +1,5 @@
 # BlackMoto
- ![icon](./assets/icon_1.png){: width=100px height=100px}
+<img src="./assets/icon_1.png" style="width:100px;height:100px;" alt="icon">
 
 ## Índice
 1. [Descripción General](#descripción-general)
