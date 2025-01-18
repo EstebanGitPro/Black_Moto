@@ -1,56 +1,105 @@
-# hello_world_app
+# BlackMoto
+![Ícono](./assets/icon_1.png)
 
-A new Flutter project.
+## Índice
+1. [Descripción General](#descripción-general)
+2. [Funcionalidades](#funcionalidades)
+3. [Requisitos Técnicos](#requisitos-técnicos)
+4. [Instalación y Configuración](#instalación-y-configuración)
+5. [Pruebas y Cobertura](#pruebas-y-cobertura)
+6. [Integración Continua](#integración-continua)
+7. [Especificaciones Técnicas](#especificaciones-técnicas)
 
-## Getting Started
+## Descripción General
+BlackMoto es una aplicación desarrollada en Flutter que implementa Clean Architecture y utiliza MySQL como base de datos. El despliegue se realiza mediante GitHub Actions.
 
-This project is a starting point for a Flutter application.
+## Funcionalidades
 
-A few resources to get you started if this is your first Flutter project:
+### Para Usuarios
+- Registro de usuarios
+- Creación de perfil para motos
+- Búsqueda de servicios específicos para vehículos
+- Visualización de información de establecimientos
+- Calificación de servicios
+- Publicación de reseñas
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Para Establecimientos
+- Registro de establecimiento
+- Gestión de servicios (agregar/quitar)
+- Publicación de ofertas de servicios
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Requisitos Técnicos
+- Flutter 3.27.1
+- Dart 3.6.0
 
-# Integración Continua (CI/CD)
+## Instalación y Configuración
 
-## Configuración Local
+### 1. Clonar el Repositorio
+```bash
+git clone https://github.com/EstebanGitPro/Black_Moto.git
+cd Black_Moto
+```
 
-### Pre-commit
-El proyecto usa git hooks para validaciones locales:
+### 2. Instalar Dependencias
+```bash
+dart pub get
+```
+
+### 3. Ejecutar la Aplicación
+```bash
+flutter run
+```
+
+## Pruebas y Cobertura
+
+### Configuración de Pruebas
+1. Instalar LCOV
+```bash
+brew install lcov
+```
+
+2. Generar Datos de Cobertura
+```bash
+flutter test --coverage
+```
+
+3. Generar Reportes HTML
+```bash
+genhtml coverage/lcov.info -o coverage/html
+```
+
+4. Visualizar Reportes
+```bash
+open coverage/html/index.html
+```
+
+## Integración Continua
+
+### Configuración Local
+#### Pre-commit
 - Análisis estático de código
 - Ejecución de pruebas unitarias
 
-## commit-msg
--Revisa que la estructura del mensaje de commit estandar
+#### Commit-msg
+- Validación de estructura de mensajes de commit
 
-### Pre-push
+#### Pre-push
 - Validación de cobertura de código
 
-El APK se generará en: `build/app/outputs/flutter-apk/app-release.apk`
-
-## GitHub Actions
-
-El workflow de CI/CD (.github/workflows/build.yml) ejecuta:
+### GitHub Actions
+El workflow (.github/workflows/build.yml) incluye:
 1. Validación de código
 2. Pruebas unitarias con cobertura
 3. Generación de APK
 4. Almacenamiento del APK como artefacto
 
-### Visualizar builds
-1. Ve a la pestaña "Actions" en GitHub
-2. Selecciona el último workflow
-3. Descarga el APK desde "Artifacts"
+Para acceder a los builds:
+1. Ir a "Actions" en GitHub
+2. Seleccionar el último workflow
+3. Descargar el APK desde "Artifacts"
 
-## Android SDK Build-Tools: 33.0.1
-"Installing Android SDK Build-Tools 33.0.1"
-
-## Tamaño del APK generado: 18.3MB
-
-## Ubicación: build/app/outputs/flutter-apk/app-release.apk
-
-## Flutter embedding: v2
-Este fue el cambio crítico que permitió que la compilación funcionara, después de actualizar desde v1
+## Especificaciones Técnicas
+- Android SDK Build-Tools: 33.0.1
+- Tamaño del APK: 18.3MB
+- Ubicación del APK: build/app/outputs/flutter-apk/app-release.apk
+- Flutter embedding: v2 (actualizado desde v1)

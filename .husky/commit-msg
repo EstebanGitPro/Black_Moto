@@ -5,8 +5,22 @@ message=$(cat "$1")
 
 echo "DEBUG: Mensaje del commit: $message"
 
-# Patrón regex para el mensaje del commit
-commit_pattern="^(fix|feat|docs|chore|refactor|test|style|perf|build|ci|revert):.*"
+# Expresión regular para mensajes de commit en español
+commit_pattern="^(corr|carac|doc|tarea|refac|prueba|estilo|rend|comp|ci|rev):.*"
+
+# Tipos de commit y sus significados:
+# corr: corrección de errores (fix)
+# carac: nueva característica (feat)
+# doc: cambios en documentación (doc)
+# tarea: tareas rutinarias, mantenimiento (chore)
+# refac: reescritura/refactorización de código (refactor)
+# prueba: añadir o modificar pruebas (test)
+# estilo: cambios de formato, espacios, etc (style)
+# rend: mejoras de rendimiento (perf)
+# comp: cambios en la compilación (build)
+# ci: cambios en integración continua (ci)
+# rev: revertir cambios anteriores (revert)
+
 
 if ! echo "$message" | grep -Eiq "$commit_pattern"; then
     echo "❌ Error: El mensaje del commit no sigue el formato requerido"
