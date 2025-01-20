@@ -12,6 +12,7 @@
 5. [Pruebas y Cobertura](#pruebas-y-cobertura)
 6. [Integración Continua](#integración-continua)
 7. [Especificaciones Técnicas](#especificaciones-técnicas)
+8. [Documentación de las ramas](#documentación-de-las-ramas)
 
 ## Descripción General
 BlackMoto es una aplicación desarrollada en Flutter que implementa Clean Architecture y ue permite a los usuarios ahorrar tanto su tiempo como su dinero en la búsqueda de los servicios especificos para su motocicleta.
@@ -106,3 +107,6 @@ Para acceder a los builds:
 - Tamaño del APK: 18.3MB
 - Ubicación del APK: build/app/outputs/flutter-apk/app-release.apk
 - Flutter embedding: v2 (actualizado desde v1)
+
+## Documentación de las ramas
+- [Guía de Branching](./doc/BRANCHING.md)
