@@ -6,8 +6,7 @@ message=$(cat "$1")
 echo "DEBUG: Mensaje del commit: $message"
 
 # Expresión regular para mensajes de commit en español
-commit_pattern="^(corr|carac|doc|tarea|refac|prueba|estilo|rend|comp|ci|rev):.*"
-
+commit_pattern="^(fix|feat|docs|task|refactor|test|style|perf|build|ci|revert):.*"
 # Tipos de commit y sus significados:
 # corr: corrección de errores (fix)
 # carac: nueva característica (feat)
